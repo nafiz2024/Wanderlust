@@ -98,8 +98,8 @@ const FeaturedDestinationsSlider = ({ destinations }) => {
                 key={destination._id || `${destination.destinationName}-${index}`}
                 className="basis-full shrink-0 md:basis-[calc((100%-16px)/2)]"
               >
-                <div className="group">
-                  <div className="relative aspect-[1.26/1] overflow-hidden bg-[#edf3f6]">
+                <div className="group rounded-[26px] border border-[#d4edf9] bg-white p-3 shadow-[0_18px_36px_rgba(8,36,56,0.12)] transition duration-300 hover:-translate-y-1.5">
+                  <div className="relative aspect-[1.26/1] overflow-hidden rounded-[20px] bg-[#edf3f6]">
                     <Image
                       src={destination.imageUrl}
                       alt={destination.destinationName || "Destination image"}
@@ -107,41 +107,50 @@ const FeaturedDestinationsSlider = ({ destinations }) => {
                       unoptimized
                       quality={100}
                       sizes="(max-width: 767px) 100vw, 50vw"
-                      className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                      className="object-cover transition duration-500 group-hover:scale-[1.07]"
                     />
-                    <div className="absolute top-3 right-3 flex items-center gap-1 bg-white/92 px-2 py-1 text-[11px] font-medium text-[#121212]">
+
+                    <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-[#03111ecc] via-[#03111e66] to-transparent" />
+
+                    <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-white/92 px-2.5 py-1 text-[11px] font-semibold text-[#121212] shadow-[0_8px_20px_rgba(2,22,35,0.2)]">
                       <span>4.5</span>
                       <FiStar className="h-3.5 w-3.5 fill-current" />
                     </div>
+
+                    <div className="absolute bottom-3 left-3">
+                      <span className="inline-flex rounded-full border border-white/40 bg-white/15 px-3 py-1 text-[11px] font-medium tracking-[0.04em] text-white backdrop-blur-md">
+                        FEATURED
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="pt-3">
-                    <div className="flex items-center gap-1 text-[11px] text-[#8a8a8a]">
+                  <div className="pt-4">
+                    <div className="flex items-center gap-1 text-[11px] font-medium text-[#6d8290]">
                       <FiMapPin className="h-3.5 w-3.5" />
                       <span>{destination.country || "Unknown"}</span>
                     </div>
 
-                    <div className="mt-1 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-3">
-                      <h3 className="text-[20px] leading-[1.15] font-normal text-[#1e1e1e] sm:text-[22px]">
+                    <div className="mt-1.5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                      <h3 className="text-[21px] leading-[1.15] font-semibold tracking-[-0.02em] text-[#152a35] sm:text-[23px]">
                         {destination.destinationName || "Untitled"}
                       </h3>
 
-                      <div className="shrink-0">
-                        <span className="text-[18px] leading-none font-semibold text-[#202020] sm:text-[20px]">
+                      <div className="inline-flex shrink-0 items-end gap-1 rounded-full bg-[#ebf9ff] px-3.5 py-1.5 text-[#0f90bf]">
+                        <span className="text-[20px] leading-none font-bold sm:text-[21px]">
                           ${destination.price || "0"}
                         </span>
-                        <span className="text-[11px] text-[#9a9a9a]">/Person</span>
+                        <span className="text-[11px] font-medium text-[#5d7f8e]">/Person</span>
                       </div>
                     </div>
 
-                    <div className="mt-2 flex items-center gap-1.5 text-[11px] text-[#8e8e8e]">
+                    <div className="mt-2 flex items-center gap-1.5 text-[11px] font-medium text-[#6f8793]">
                       <FiCalendar className="h-3.5 w-3.5" />
                       <span>{getDurationText(destination.duration)}</span>
                     </div>
 
                     <Link
                       href={`/destination/${destination._id}`}
-                      className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.02em] text-[#15A1BF]"
+                      className="mt-4 inline-flex h-10 items-center gap-2 rounded-full bg-linear-to-r from-[#0ea5e9] to-[#14b8a6] px-4 text-[12px] font-semibold uppercase tracking-[0.05em] text-white shadow-[0_12px_24px_rgba(20,184,166,0.35)] transition hover:brightness-110"
                     >
                       <span>Book Now</span>
                       <FiArrowUpRight className="h-3.5 w-3.5" />
