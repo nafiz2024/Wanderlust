@@ -43,7 +43,7 @@ const sortDestinations = (items, sortBy) => {
 };
 
 const filterClassName =
-  "flex h-[46px] w-full appearance-none items-center justify-between border border-[#d9d9d9] bg-white px-4 text-left text-[12px] font-normal tracking-[0.01em] text-[#8c8c8c] outline-none";
+  "flex h-[48px] w-full appearance-none items-center justify-between rounded-full border border-[#cbe9f8] bg-white px-4 text-left text-[12px] font-medium tracking-[0.01em] text-[#547381] outline-none";
 
 const DestinationCatalog = ({ destinations }) => {
   const [category, setCategory] = useState("all");
@@ -74,7 +74,7 @@ const DestinationCatalog = ({ destinations }) => {
 
   return (
     <>
-      <div className="grid gap-0 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
         <div className="relative">
           <select
             value={category}
@@ -97,7 +97,7 @@ const DestinationCatalog = ({ destinations }) => {
           <select
             value={priceRange}
             onChange={(e) => setPriceRange(e.target.value)}
-            className={`${filterClassName} pr-10 sm:border-l-0 xl:border-l-0`}
+            className={`${filterClassName} pr-10`}
           >
             <option value="all">PRICE RANGE</option>
             <option value="under-1000">UNDER $1000</option>
@@ -112,7 +112,7 @@ const DestinationCatalog = ({ destinations }) => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className={`${filterClassName} pr-10 xl:border-l-0`}
+            className={`${filterClassName} pr-10`}
           >
             <option value="default">SORT BY</option>
             <option value="price-low-high">PRICE: LOW TO HIGH</option>

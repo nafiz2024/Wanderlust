@@ -29,7 +29,7 @@ const Navbar = () => {
   const avatarSource = getAvatarSource(userImage);
   const [failedImageUrl, setFailedImageUrl] = useState("");
   const navLinkClassName =
-    "inline-flex h-10 items-center justify-center rounded-full border border-transparent px-4 text-sm font-medium text-[#12313a] transition-colors hover:border-[#d9eef3] hover:bg-[#f6fcfe] hover:text-[#15A1BF] focus:border-[#d9eef3] focus:bg-[#f6fcfe] focus:text-[#15A1BF]";
+    "inline-flex h-10 items-center justify-center rounded-full border border-transparent px-4 text-sm font-medium text-[#11313d] transition-all hover:border-[#cceefe] hover:bg-[#ecfaff] hover:text-[#0b93cb] focus:border-[#cceefe] focus:bg-[#ecfaff] focus:text-[#0b93cb]";
 
   const handleLogout = async () => {
     await authClient.signOut();
@@ -194,13 +194,13 @@ const Navbar = () => {
 
   return (
     <div className="p-3 sm:p-4">
-      <div className="max-lg:collapse w-full overflow-visible rounded-md bg-white text-[#0C0B0B] shadow-sm">
+      <div className="max-lg:collapse w-full overflow-visible rounded-2xl border border-[#dbeafe] bg-white/90 text-[#0C0B0B] shadow-[0_16px_34px_rgba(2,32,58,0.12)] backdrop-blur-sm">
         <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
         <label
           htmlFor="navbar-1-toggle"
           className="fixed inset-0 hidden max-lg:peer-checked:block"
         ></label>
-        <div className="collapse-title navbar min-h-[68px] gap-3 px-3 sm:px-4">
+        <div className="collapse-title navbar min-h-[70px] gap-3 px-3 sm:px-4">
           <div className="navbar-start hidden min-w-0 flex-1 lg:flex">
             <ul className="menu menu-horizontal flex gap-4 xl:gap-5">
               {navLinks}
@@ -209,7 +209,7 @@ const Navbar = () => {
           <div className="navbar-start lg:hidden">
             <label
               htmlFor="navbar-1-toggle"
-              className="btn btn-ghost h-10 min-h-10 w-10 p-0 lg:hidden"
+              className="btn btn-ghost h-10 min-h-10 w-10 rounded-full border border-[#d9effa] bg-white p-0 text-[#0e7399] lg:hidden"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

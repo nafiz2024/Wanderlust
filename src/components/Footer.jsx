@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="bg-black px-4 py-14 text-gray-400 sm:px-6 md:px-10 lg:px-16">
+    <footer className="mt-14 bg-[#041422] px-4 py-14 text-[#9eb2bf] sm:px-6 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="bg-linear-to-r from-[#67e8f9] via-[#38bdf8] to-[#14b8a6] bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
             Wanderlust
           </h1>
           <p className="mt-4 max-w-xl text-sm sm:text-base">
@@ -18,13 +18,13 @@ const Footer = () => {
               Subscribe for exclusive travel deals and inspiration.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 bg-gray-800 px-4 py-3 sm:flex-nowrap">
+            <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-[#16405b] bg-[#0b2437] px-4 py-3 sm:flex-nowrap">
               <input
                 type="email"
                 placeholder="Enter email"
                 className="min-w-0 flex-1 bg-transparent text-sm outline-none"
               />
-              <span className="text-lg text-white">&rarr;</span>
+              <span className="text-lg text-[#67e8f9]">&rarr;</span>
             </div>
           </div>
 
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-gray-800 pt-6 md:flex-row md:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-[#153147] pt-6 md:flex-row md:items-center">
           <p className="text-sm">&copy; 2026 Wanderlust. All rights reserved.</p>
 
           <div className="mt-1 flex gap-5 text-lg text-white md:mt-0">

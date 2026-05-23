@@ -6,10 +6,10 @@ const CTA = () => {
   return (
     <section className="px-4 pb-18 sm:px-6 lg:px-8">
       <div
-        className="relative mx-auto flex min-h-[220px] max-w-[1220px] items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat px-5 py-12 text-center sm:min-h-[280px] sm:px-6"
+        className="relative mx-auto flex min-h-[220px] max-w-[1220px] items-center justify-center overflow-hidden rounded-[32px] border border-[#b6ebfd] bg-cover bg-center bg-no-repeat px-5 py-12 text-center shadow-[0_24px_50px_rgba(6,29,42,0.25)] sm:min-h-[280px] sm:px-6"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(8, 18, 22, 0.52), rgba(8, 18, 22, 0.52)), url('/assets/CTA.png')",
+            "linear-gradient(rgba(5, 20, 37, 0.62), rgba(5, 20, 37, 0.58)), url('/assets/CTA.png')",
         }}
       >
         <div className="relative z-10 max-w-[780px]">
@@ -22,7 +22,7 @@ const CTA = () => {
 
           <Link
             href="/destination"
-            className="mt-7 inline-flex min-h-12 items-center justify-center gap-3 bg-white px-6 py-3 text-[12px] font-medium uppercase tracking-[0.05em] text-[#161616] transition-colors hover:bg-[#f3f3f3]"
+            className="mt-7 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-linear-to-r from-[#67e8f9] to-[#22d3ee] px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.05em] text-[#093449] transition hover:-translate-y-0.5 hover:brightness-105"
           >
             <span>Book Your Trip Today</span>
             <FiArrowRight className="h-4 w-4" />

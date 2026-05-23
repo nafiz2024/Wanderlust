@@ -39,22 +39,23 @@ const Banner = () => {
       className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-cover bg-center bg-no-repeat text-white"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(12, 23, 26, 0.34), rgba(12, 23, 26, 0.34)), url('/assets/Banner.png')",
+          "linear-gradient(rgba(3, 17, 32, 0.5), rgba(3, 17, 32, 0.58)), url('/assets/Banner.png')",
       }}
     >
+      <div className="soft-grid absolute inset-0 opacity-30" />
       <div className="absolute inset-x-0 top-0 z-20">
         <Navbar />
       </div>
 
-      <div className="mx-auto flex w-full max-w-[1200px] flex-1 items-center justify-center px-4 pb-14 pt-24 text-center sm:px-6 sm:pb-24 sm:pt-36 lg:pb-28 lg:pt-40">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-1 items-center justify-center px-4 pb-14 pt-24 text-center sm:px-6 sm:pb-24 sm:pt-36 lg:pb-28 lg:pt-40">
         <div className="max-w-[1160px]">
-          <h1 className="text-[36px] font-normal leading-[0.95] tracking-tight sm:text-6xl lg:text-[72px]">
+          <h1 className="text-[38px] font-semibold leading-[0.92] tracking-tight sm:text-6xl lg:text-[76px]">
             Discover Your
             <br />
             Next Adventure
           </h1>
 
-          <p className="mx-auto mt-5 max-w-[1120px] text-sm font-normal text-white sm:text-xl lg:text-2xl">
+          <p className="mx-auto mt-5 max-w-[1120px] text-sm font-normal text-white/90 sm:text-xl lg:text-2xl">
             Explore breathtaking destinations and create unforgettable
             memories with our curated travel experiences.
           </p>
@@ -63,7 +64,7 @@ const Banner = () => {
             <button
               type="button"
               onClick={() => router.push("/destination")}
-              className="w-full bg-[#12b7ee] px-6 py-3 text-base font-medium uppercase text-white transition-colors hover:bg-[#0ea6d8] sm:min-w-[148px] sm:w-auto sm:text-lg"
+              className="w-full rounded-full bg-linear-to-r from-[#0ea5e9] to-[#14b8a6] px-6 py-3 text-base font-medium uppercase text-white shadow-[0_12px_30px_rgba(20,184,166,0.35)] transition hover:-translate-y-0.5 hover:brightness-110 sm:min-w-[148px] sm:w-auto sm:text-lg"
             >
               Explore Now
             </button>
@@ -71,7 +72,7 @@ const Banner = () => {
             <button
               type="button"
               onClick={() => router.push("/destination")}
-              className="w-full bg-white/35 px-6 py-3 text-base font-medium uppercase text-white backdrop-blur-[1px] transition-colors hover:bg-white/45 sm:min-w-[181px] sm:w-auto sm:text-lg"
+              className="w-full rounded-full border border-white/60 bg-white/22 px-6 py-3 text-base font-medium uppercase text-white backdrop-blur-md transition hover:bg-white/34 sm:min-w-[181px] sm:w-auto sm:text-lg"
             >
               View Destination
             </button>
@@ -79,9 +80,9 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="w-full bg-white/30 backdrop-blur-[2px]">
+      <div className="relative z-10 w-full border-t border-white/25 bg-[#021322]/40 backdrop-blur-md">
         <div className="grid min-h-[72px] w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.2fr_1.1fr_1fr_1fr_auto]">
-          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/25 px-4 py-3 text-left md:border-r md:border-white/30 xl:border-b-0">
+          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/20 px-4 py-3 text-left md:border-r md:border-white/20 xl:border-b-0">
             <label
               htmlFor="banner-location"
               className="text-[14px] font-medium leading-5 text-white"
@@ -94,11 +95,11 @@ const Banner = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               placeholder="Address, City or Zip"
-              className="bg-transparent text-[14px] leading-5 text-white outline-none placeholder:text-white/80"
+              className="bg-transparent text-[14px] leading-5 text-white outline-none placeholder:text-white/75"
             />
           </div>
 
-          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/25 px-4 py-3 text-left md:border-r md:border-white/30 xl:border-b-0">
+          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/20 px-4 py-3 text-left md:border-r md:border-white/20 xl:border-b-0">
             <label
               htmlFor="banner-duration"
               className="text-[14px] font-medium leading-5 text-white"
@@ -118,7 +119,7 @@ const Banner = () => {
             </select>
           </div>
 
-          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/25 px-4 py-3 text-left md:border-r md:border-white/30 xl:border-b-0">
+          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/20 px-4 py-3 text-left md:border-r md:border-white/20 xl:border-b-0">
             <label
               htmlFor="banner-budget"
               className="text-[14px] font-medium leading-5 text-white"
@@ -138,7 +139,7 @@ const Banner = () => {
             </select>
           </div>
 
-          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/25 px-4 py-3 text-left md:border-r md:border-white/30 xl:border-b-0">
+          <div className="flex min-h-[72px] flex-col justify-center border-b border-white/20 px-4 py-3 text-left md:border-r md:border-white/20 xl:border-b-0">
             <label
               htmlFor="banner-people"
               className="text-[14px] font-medium leading-5 text-white"
@@ -161,7 +162,7 @@ const Banner = () => {
           <button
             type="button"
             onClick={handleSearch}
-            className="flex min-h-[72px] items-center justify-center bg-[#14b7ec] px-6 text-[16px] font-medium text-white transition-colors hover:bg-[#0ea6d8] md:col-span-2 xl:col-span-1"
+            className="flex min-h-[72px] items-center justify-center bg-linear-to-r from-[#0ea5e9] to-[#14b8a6] px-6 text-[16px] font-medium text-white transition hover:brightness-110 md:col-span-2 xl:col-span-1"
           >
             Search
           </button>

@@ -24,9 +24,9 @@ const DestinationCard = ({ destinations }) => {
         return (
           <article
             key={destination._id || `${destination.destinationName}-${index}`}
-            className="group"
+            className="group rounded-3xl border border-[#d7effb] bg-white p-3 shadow-[0_14px_28px_rgba(10,40,60,0.08)] transition hover:-translate-y-1"
           >
-            <div className="relative mb-3 aspect-[1.45/1] overflow-hidden bg-[#f0f0f0]">
+            <div className="relative mb-3 aspect-[1.45/1] overflow-hidden rounded-2xl bg-[#f0f0f0]">
               <Image
                 src={destination.imageUrl}
                 alt={destination.destinationName || "Destination image"}

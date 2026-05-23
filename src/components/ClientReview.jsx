@@ -53,11 +53,11 @@ const ClientReview = () => {
   ];
 
   return (
-    <section className="bg-white px-4 py-18 sm:px-6 lg:px-8">
+    <section className="px-4 py-18 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1220px]">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <h2 className="text-[34px] leading-none font-light tracking-[-0.045em] text-[#161616] sm:text-[50px]">
+            <h2 className="text-[34px] leading-none font-semibold tracking-[-0.045em] text-[#112733] sm:text-[50px]">
               What Travelers Say
             </h2>
             <p className="mt-3 text-[13px] text-[#7d7d7d] sm:text-[14px]">
@@ -89,7 +89,7 @@ const ClientReview = () => {
           {visibleReviews.map((review) => (
             <article
               key={review.id}
-              className="grid overflow-hidden border border-[#ececec] bg-white shadow-[0_3px_10px_rgba(15,23,42,0.03)] md:grid-cols-[1.2fr_0.8fr]"
+              className="grid overflow-hidden rounded-3xl border border-[#d7effb] bg-white shadow-[0_16px_40px_rgba(10,40,60,0.08)] md:grid-cols-[1.2fr_0.8fr]"
             >
               <div className="flex flex-col justify-between px-4 py-5 sm:px-5 sm:py-6">
                 <p className="max-w-[360px] text-[14px] leading-7 text-[#202020] sm:text-[15px]">

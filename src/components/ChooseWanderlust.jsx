@@ -24,10 +24,10 @@ const chooseHighlights = [
 
 const ChooseWanderlust = () => {
   return (
-    <section className="bg-[#eaf9ff] px-4 py-18 sm:px-6 lg:px-8">
+    <section className="px-4 py-18 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1220px]">
         <header className="text-center">
-          <h2 className="text-[34px] leading-none font-light tracking-[-0.045em] text-[#161616] sm:text-[50px]">
+          <h2 className="text-[34px] leading-none font-semibold tracking-[-0.045em] text-[#112733] sm:text-[50px]">
             Why Choose Wanderlust
           </h2>
           <p className="mt-3 text-[13px] text-[#7d8b91] sm:text-[14px]">
@@ -42,7 +42,7 @@ const ChooseWanderlust = () => {
             return (
               <article
                 key={item.title}
-                className="bg-white px-5 py-7 shadow-[0_2px_8px_rgba(15,23,42,0.04)] sm:px-6 sm:py-8"
+                className="card-glow relative rounded-3xl border border-[#d8f0fb] bg-white px-5 py-7 shadow-[0_10px_24px_rgba(5,30,52,0.08)] sm:px-6 sm:py-8"
               >
                 <span className="inline-flex text-[#19a7c9]">
                   <Icon className="h-7 w-7" />

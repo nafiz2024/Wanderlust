@@ -29,7 +29,7 @@ const DestinationsDetailsPage = async ({ params }) => {
   const destination = await getDestinationById(id);
 
   return (
-    <section className="bg-white px-4 pb-20 pt-8 sm:px-6 lg:px-8">
+    <section className="px-4 pb-20 pt-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1160px]">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <Link
@@ -46,7 +46,7 @@ const DestinationsDetailsPage = async ({ params }) => {
           </div>
         </div>
 
-        <div className="relative mt-7 aspect-[1.5/1] overflow-hidden bg-[#eef2f5] sm:aspect-[1.8/1] lg:aspect-[2.1/1]">
+        <div className="relative mt-7 aspect-[1.5/1] overflow-hidden rounded-3xl border border-[#d4ecf8] bg-[#eef2f5] shadow-[0_20px_42px_rgba(8,40,64,0.14)] sm:aspect-[1.8/1] lg:aspect-[2.1/1]">
           <Image
             src={destination.imageUrl}
             alt={destination.destinationName || "Destination image"}

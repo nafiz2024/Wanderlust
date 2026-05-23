@@ -85,15 +85,15 @@ export function BookingCard({ destination }) {
   };
 
   return (
-    <aside className="h-fit border border-[#ececec] bg-white px-5 py-6 shadow-[0_10px_30px_rgba(15,23,42,0.04)] lg:sticky lg:top-6">
+    <aside className="h-fit rounded-3xl border border-[#ccecf9] bg-white px-5 py-6 shadow-[0_18px_34px_rgba(8,40,64,0.12)] lg:sticky lg:top-6">
       <p className="text-[11px] text-[#9a9a9a]">Starting from</p>
-      <p className="mt-2 text-[38px] leading-none font-bold text-[#19a7c6]">
+      <p className="mt-2 text-[38px] leading-none font-bold text-[#0aa2d2]">
         ${price || "0"}
       </p>
       <p className="mt-1 text-[12px] text-[#8d8d8d]">per person</p>
 
       <div
-        className="relative mt-6 border border-[#e6e6e6] bg-[#fafafa]"
+        className="relative mt-6 rounded-2xl border border-[#d7edf8] bg-[#f8fcff]"
         onClick={handleOpenDatePicker}
       >
         <input
@@ -128,7 +128,7 @@ export function BookingCard({ destination }) {
       <button
         type="button"
         onClick={handleBooking}
-        className="mt-[14px] inline-flex h-[50px] w-full items-center justify-center bg-[#16a8c8] text-sm font-medium text-white transition-colors hover:bg-[#1096b3]"
+        className="mt-[14px] inline-flex h-[50px] w-full items-center justify-center rounded-full bg-linear-to-r from-[#0ea5e9] to-[#14b8a6] text-sm font-semibold text-white shadow-[0_12px_24px_rgba(20,184,166,0.35)] transition hover:brightness-110"
       >
         Book Now
       </button>

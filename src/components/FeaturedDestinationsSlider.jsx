@@ -65,21 +65,21 @@ const FeaturedDestinationsSlider = ({ destinations }) => {
   }
 
   return (
-    <section className="overflow-hidden bg-white px-4 pb-18 pt-14 sm:px-6 lg:px-8">
+    <section className="overflow-hidden px-4 pb-18 pt-14 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="section-shell soft-grid flex flex-col gap-5 p-6 sm:flex-row sm:items-end sm:justify-between sm:p-8">
           <div>
-            <h2 className="text-[34px] leading-none font-light tracking-[-0.045em] text-[#161616] sm:text-[48px]">
+            <h2 className="text-[34px] leading-none font-semibold tracking-[-0.045em] text-[#0f2531] sm:text-[48px]">
               Featured Destinations
             </h2>
-            <p className="mt-3 text-[13px] text-[#7b7b7b] sm:text-[14px]">
+            <p className="mt-3 text-[13px] text-[#5f7480] sm:text-[14px]">
               Handpicked travel experiences for the adventure seekers
             </p>
           </div>
 
           <Link
             href="/destination"
-            className="inline-flex h-11 items-center justify-center gap-3 self-start border border-[#9adcf0] px-5 text-[11px] font-medium uppercase tracking-[0.06em] text-[#1ca7ca] transition-colors hover:bg-[#f2fbfe] sm:self-auto"
+            className="inline-flex h-11 items-center justify-center gap-3 self-start rounded-full border border-[#8fdbf6] bg-white px-5 text-[11px] font-medium uppercase tracking-[0.06em] text-[#0a97c5] transition hover:-translate-y-0.5 hover:bg-[#f2fbfe] sm:self-auto"
           >
             <span>All Destinations</span>
             <FiArrowUpRight className="h-3.5 w-3.5" />
