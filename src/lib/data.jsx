@@ -2,7 +2,9 @@ import { headers } from "next/headers";
 import { auth } from "./auth";
 
 export const getDestinationsData = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`, {
+        cache: "no-store",
+    });
     const data = await res.json();
     return data;
 }
@@ -13,6 +15,7 @@ export const getDestinationById = async (id) => {
     })
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${id}`, {
+        cache: "no-store",
         headers: {
             authorization: `Bearer ${token}`
         }
@@ -27,6 +30,7 @@ export const getBookingsByUserId = async (id) => {
     })
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${id}`, {
+        cache: "no-store",
         headers: {
             authorization: `Bearer ${token}`
         }
