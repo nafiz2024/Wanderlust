@@ -1,23 +1,39 @@
 "use client";
 
-import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
 import { FiTrash2 } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 export function DeleteBooking({ bookingId }) {
 
     const handleCancelBooking = async() => {
-        const {data:tokenData} = await authClient.token()
+        try {
+            const res = await fetch(`/api/booking/${bookingId}`, {
+                method: "DELETE",
+                headers: {
+                    "content-type": "application/json",
+                }
+            });
 
-        await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${bookingId}`, {
-            method: "DELETE",
-            headers: {
-                "content-type": "application/json",
-                authorization: `Bearer ${tokenData?.token}`
+            if (!res.ok) {
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(
+                    errorData?.message || `Delete failed with status ${res.status}`,
+                );
             }
-        })
 
-        window.location.href = "/my-bookings";
+            toast.success("Booking deleted successfully.", {
+                position: "top-right",
+                autoClose: 2500,
+            });
+            window.location.href = "/my-bookings";
+        } catch (error) {
+            toast.error(error?.message || "Failed to delete booking.", {
+                position: "top-right",
+                autoClose: 3000,
+            });
+            console.error(error);
+        }
     }
 
   return (

@@ -51,23 +51,24 @@ export function BookingCard({ destination }) {
       destinationName,
       imageUrl,
       country,
-      departureDate: new Date(departureDate),
+      price: Number(price) || 0,
+      departureDate,
     };
 
-    const {data:tokenData} = await authClient.token()
-
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking`, {
+      const res = await fetch("/api/booking", {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${tokenData?.token}`
         },
         body: JSON.stringify(bookingData),
       });
 
       if (!res.ok) {
-        throw new Error(`Booking failed: ${res.status}`);
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(
+          errorData?.message || `Booking failed with status ${res.status}`,
+        );
       }
 
       toast.success("Booking Complete", {
@@ -75,7 +76,7 @@ export function BookingCard({ destination }) {
         autoClose: 3000,
       });
     } catch (error) {
-      toast.error("Booking failed. Please try again.", {
+      toast.error(error?.message || "Booking failed. Please try again.", {
         position: "top-right",
         autoClose: 3000,
       });
